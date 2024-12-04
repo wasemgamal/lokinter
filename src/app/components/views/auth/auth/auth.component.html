@@ -1,0 +1,12 @@
+<div class="auth_layout">
+    <div class="d-flex">
+        <aside class="col-md-6 col">
+            <div class="p-5">
+                <ng-content></ng-content>
+            </div>
+        </aside>
+        <aside class="col-md-6 d-md-flex justify-content-center align-items-center d-none vh-100 overflow-hidden">
+            <app-base-image-component [path]="img()" alt="image"></app-base-image-component>
+        </aside>
+    </div>
+</div>

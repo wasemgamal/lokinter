@@ -14,7 +14,7 @@ html{
 
 body {
     background-color: var(--white);
-    font-family: var(--secondaryFont);
+    font-family: var(--primaryFont);
 }
 
 a {
@@ -43,10 +43,10 @@ textarea {
     color: var(--black);
 }
 
-.grey_color {
+.gray_color {
     color: var(--grey);
 }
-.grey_bg {
+.gray_bg {
     background-color: var(--grey);
 }
 
@@ -79,26 +79,11 @@ textarea {
     }
 }
 
-.font_black {
-    font-family: var(--fontBlack);
+.primary_font{
+    font-family: var(--primaryFont);
 }
-
-.font_bold {
-    font-family: var(--fontBold);
-}
-
-.font_regular {
-    font-family: var(--fontRegular);
-}
-
-.font_extra__bold {
-    font-family: var(--fontExtraBold);
-}
-.font_semi__bold {
-    font-family: var(--fontSemiBold);
-}
-.font_light {
-    font-family: var(--fontLight);
+.secondary_font{
+    font-family: var(--secondaryFont);
 }
 
 .transition{
@@ -109,10 +94,28 @@ textarea {
     z-index: 3;
 }
 
+.underlined_title{
+    position: relative;
+    &::before{
+        @include absolute-position(100%, 0, 100px, 2px);
+        background-color: var(--primaryColor);
+    }
+}
+
+.rotate_y__180{
+    transform: rotateY(180deg);
+    transform-origin: center;
+}
+
 
 @for $i from 1 through 30 {
     .border_radius__#{$i * 5} {
         border-radius: #{$i * 5}px;
+    }
+}
+@for $i from 1 through 10 {
+    .letter_spacing__#{$i} {
+        letter-spacing: #{$i}px;
     }
 }
 
@@ -151,7 +154,8 @@ textarea {
 
 .form-control{
     @extend .font_size__13;
-    background-color: var(--bs-gray-200);
+    background-color: transparent;
+    border-color: var(--bs-gray-500);
     color: var(--bs-gray);
     padding: 10px;
 }
@@ -249,17 +253,22 @@ body{
     font-family: var(--fontRegular);
     @extend .font_size__13;
 }
+.p-inputtext{
+    padding: 9px;
+}
 .p-inputwrapper, .p-inputnumber{
     width: 100%;
 }
 
 .p-dropdown{
+    border-color: var(--bs-gray-500);
+    @extend .border_radius__10;
     .p-dropdown-label{
         line-height: 1;
         min-height: 37px;
     }
     .p-placeholder{
-        @extend .font_size__13, .font_regular;
+        @extend .font_size__13;
     }
     &:hover, &:focus, &:not(.p-disabled).p-focus{
         border-color: var(--primaryColor) !important;
@@ -273,8 +282,38 @@ body{
     background: var(--primaryColor);
 }
 
-.p-float-label input:focus ~ label, .p-float-label input.p-filled ~ label, .p-float-label textarea:focus ~ label, .p-float-label textarea.p-filled ~ label, .p-float-label .p-inputwrapper-focus ~ label, .p-float-label .p-inputwrapper-filled ~ label{
-    color: var(--white)
+ .p-float-label{
+    position: relative;
+    label{
+        color: var(--bs-gray);
+        background-color: var(--white);
+        top: 0rem;
+        padding: 2px 5px;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        @extend .font_size__13;
+    }
+    .form-control{
+        padding: 15px !important;
+        padding-inline-start: 50px !important;
+        @extend .border_radius__10;
+    }
+    i{
+        @include absolute-position(18px, 16px, 20px, 20px);
+        @extend .font_size__14;
+        color: var(--bs-gray);
+        z-index: 2;
+    }
+    .p-dropdown {
+        .p-dropdown-label{
+            padding: 17px !important;
+            padding-inline-start: 50px !important;
+        }
+        .p-placeholder {
+            opacity: 1 !important;
+            @extend .font_size__14;
+        }
+    }
  }
 
  .p-toast .p-toast-message .p-toast-message-content{

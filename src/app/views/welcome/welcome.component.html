@@ -1,0 +1,161 @@
+<div class="top_nav bg-white">
+    <div class="container py-3">
+        <div class="d-flex g-0 justify-content-between align-items-center letter_spacing__2">
+            <aside class="flex-fill">
+                <p class="mb-md-0 mb-3">
+                    <span class="pe-3 border-end border-dark"> {{'LOKINTER@gmail.com'}} </span>
+                    <span class="ps-3"> {{'+1 (333) 000-0000'}} </span>
+                </p>
+            </aside>
+            <aside>
+                <app-base-button-component classes="btn-primary rounded-3 text-uppercase px-5 py-2 letter_spacing__2"> register </app-base-button-component>
+            </aside>
+            
+        </div>
+    </div>
+</div>
+
+<article class="banner secondary_bg">
+    <section class="container">
+        <nav class="navbar navbar-expand-lg bg-transparent py-3">
+            <div class="container-fluid g-0">
+              <app-logo-component classes="text-white"></app-logo-component>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                 
+                    @for(item of links; track item){
+                        <li class="nav-item">
+                            <app-base-link-component classes="nav-link white_color text-uppercase mx-3 font_size__14 letter_spacing__1" activeClasses="primary_color" [path]="item.link"> {{item.title}} </app-base-link-component>
+                        </li>
+                    }
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <div class="my-5 py-5 text-white col-8 ">
+            <div class="py-5">
+            <p class="text-uppercase"> we are best Shipping company </p>
+            <h1 class="my-4 font_size__50 text-uppercase fw-bold"> Lorem Ipsum is simply dummy text of the printing and </h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
+        </div>
+        </div>
+    </section>
+</article>
+
+<article class="about_us primary_font">
+    <section class="container py-5 py-5">
+        <div class="row">
+            <aside class="col-md-7 mb-3">
+                <p class="text-uppercase letter_spacing__2 fw-semibold" style="color:var(--blue-700)"> About Us </p>
+                <p class="text-uppercase letter_spacing__2 font_size__40 fw-bold secondary_color"> Lorem Ipsum is simply dummy text of the  </p>
+                <p class="gray_color"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum  </p>
+                <app-base-button-component classes="btn btn-primary px-5 py-3 text-uppercase letter_spacing__2"> Learn More </app-base-button-component>
+            </aside>
+            <aside class="col-md-5 mb-3 text-center">
+                <app-base-image-component classes="rounded-4" path="about-img.png" alt="about image"></app-base-image-component>
+            </aside>
+        </div>
+
+        <div class="row mt-5">
+            @for(item of aboutCounts; track item){
+                <aside class="col-md-4">
+                    <div class="secondary_bg rounded-2 p-5 text-white text-uppercase h2 fw-bold">
+                        {{item.count}} <span class="mx-3">|</span> {{item.title}}
+                    </div>
+                </aside>
+            }
+        </div>
+    </section>
+</article>
+
+<article class="services bg-body-secondary">
+    <section class="container py-5 my-5">
+        <div class="text-center text-uppercase col-md-7 mx-auto mb-5">
+            <p class="fw-medium" style="color:var(--blue-700)">Our Services</p>
+            <p class="letter_spacing__2 font_size__40 fw-bold secondary_color">Efficient and Reliable Shipping with Us</p>
+        </div>
+
+        <div class="row">
+            @for(item of [1,2,3,4,5,6]; track item){
+                <aside class="col-md-4 mb-3 align-items-stretch">
+                    <div class="service_box bg-white rounded-4 p-4">
+                        <p-avatar 
+                        icon="pi pi-inbox" 
+                        styleClass="text-white fw-light rounded-3 p-4" size="xlarge" [style]="{backgroundColor: 'var(--indigo-600)'}"/>
+                        <p class="secondary_color text-uppercase font_size__25 my-4 fw-bold">international Shipping</p>
+                        <p class="gray_color fw-medium"> At FastGo, we believe in providing our clients with personalized and efficient logistics solutions that meet their unique needs.  </p>
+                    </div> 
+                </aside>
+            }
+        </div>
+    </section>
+</article>
+
+<article class="how_it__works primary_font">
+    <section class="container py-5 py-5">
+        <div class="row">
+            <aside class="col-md-6 mb-3 text-center">
+                <app-base-image-component classes="rounded-4" path="about-img.png" alt="about image"></app-base-image-component>
+            </aside>
+            <aside class="col-md-6 mb-3">
+                <p class="text-uppercase letter_spacing__2 fw-semibold" style="color:var(--blue-700)"> How It Works </p>
+                <p class="text-uppercase letter_spacing__2 font_size__40 fw-bold secondary_color"> Simplify Your Shipping Experience with Our Easy Step Process  </p>
+                <p class="gray_color"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has  </p>
+            </aside>
+        </div>
+
+        <p-divider type="dashed"/>
+
+        <div class="row mt-5">
+            @for(item of [1,2,3]; track item){
+                <aside class="col-md-4 mb-3">
+                    <div class="service_box text-center p-4">
+                        <p-avatar 
+                        icon="pi pi-inbox" 
+                        styleClass="text-white fw-light rounded-3 p-5" size="xlarge" [style]="{backgroundColor: 'var(--indigo-600)'}"/>
+                        <p class="secondary_color text-uppercase font_size__25 my-4 fw-bold">Sign up</p>
+                        <p class="gray_color fw-light"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has  </p>
+                    </div> 
+                </aside>
+            }
+        </div>
+    </section>
+</article>
+
+<footer class="secondary_bg pt-5">
+    <section class="container py-5">
+        <div class="row">
+            <aside class="col-md-4 mb-3">
+                <app-logo-component classes="text-white font_size__30 mb-4 d-block"></app-logo-component>
+                <p class="text-white secondary_font">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+            </aside>
+            <aside class="col-md-4 mb-3">
+                <h6 class="text-uppercase fw-bold mb-4 text-white font_size__20"> Navigation </h6>
+                <ul class="list-unstyled px-0">
+                    @for(item of links; track item){
+                        <li class="mb-2 fw-light"> <app-base-link-component classes="text-white text-capitalize" [path]="item.link"> {{item.title}} </app-base-link-component> </li>
+                    }
+                </ul>
+            </aside>
+            <aside class="col-md-4 mb-3">
+                <h6 class="text-uppercase fw-bold mb-4 text-white font_size__20"> Subscribe Us </h6>
+                <form action="" class="mb-3">
+                    <div>
+                        <input type="email" placeholder="Enter Your Email" class="form-control bg-white p-3 mb-2">
+                        <app-base-button-component classes="btn btn-primary w-100 p-3 letter_spacing__1 text-uppercase">subscribe now</app-base-button-component>
+                    </div>
+                </form>
+            </aside>
+        </div>
+
+        <p-divider type="dashed"/>
+
+        <div class="text-center text-white letter_spacing__1 pt-3">
+            <span> Copyright © {{year}} LOKINTER </span>
+        </div>
+    </section>
+</footer>

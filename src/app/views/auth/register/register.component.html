@@ -1,0 +1,41 @@
+<app-auth img="register-side.png">
+    <div>
+        <h6 class="h1 primary_font primary_color text-uppercase fw-bold"> sign up </h6>
+        <p class="font_size__14"> Already have an account? <app-base-link-component classes="primary_color"
+                [path]="'/' + ERoutes.login"> Sign In </app-base-link-component> </p>
+        <form class="row">
+            <div class="col-6 mb-3">
+                <input type="text" placeholder="First Name" class="form-control" />
+            </div>
+            <div class="col-6 mb-3">
+                <input type="text" placeholder="Last Name" class="form-control" />
+            </div>
+            <div class="col-6 mb-3">
+                <p-dropdown inputStyleClass="form-control" [options]="[1,2]" placeholder="Select a City" />
+            </div>
+            <div class="col-6 mb-3">
+                <p-inputNumber placeholder="Phone Number" inputStyleClass="form-control" mode="decimal"
+                    inputId="withoutgrouping" [useGrouping]="false" />
+            </div>
+            <div class="col-12 mb-3">
+                <input type="email" placeholder="Email" class="form-control" />
+            </div>
+            <div class="col-12 mb-3">
+                <input type="password" placeholder="Password" class="form-control" />
+            </div>
+            <div class="col-12 mb-3">
+                <div class="d-flex">
+                    @for(item of accountsTypes; track item.type; let index = $index){
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" [id]="'accountType-' + index">
+                            <label class="form-check-label" [for]="'accountType-' + index">
+                                {{item.title}}
+                            </label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </form>
+        <app-base-button-component classes="btn-primary px-4"> Register </app-base-button-component>
+    </div>
+</app-auth>

@@ -1,0 +1,15 @@
+.services{
+    
+    .service_box{
+        transition: var(--transition);
+    p{
+        transition: var(--transition);
+    }
+        &:hover{
+            background-color: var(--secondaryColor) !important;
+            p{
+                color: var(--white) !important;
+            }
+        }
+    }
+}

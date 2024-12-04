@@ -1,0 +1,99 @@
+<app-shadow-box>
+    <div class="d-flex justify-content-end text-capitalize overflow-hidden rounded-4 pb-3">
+        <div class="col-md-2 col-6"><app-base-button-component (clicked)="type.set(ESearchType.local)"
+                classes="btn {{type() === ESearchType.local ? 'btn-secondary' : 'btn-outline-secondary'}} px-5 py-3 rounded-0 w-100">
+                local </app-base-button-component></div>
+        <div class="col-md-2 col-6"><app-base-button-component (clicked)="type.set(ESearchType.international)"
+                classes="btn {{type() === ESearchType.international ? 'btn-secondary' : 'btn-outline-secondary'}} px-5 py-3 rounded-0 w-100">
+                international </app-base-button-component></div>
+    </div>
+
+    @if(type() === ESearchType.international){
+    <ng-container>
+        <div class="p-5">
+            <div class="row">
+                <aside class="col-md-3 mb-3">
+                    <p-floatLabel>
+                        <i class="pi pi-globe"></i>
+                        <p-dropdown [options]="[]" optionLabel="name" placeholder="from country"
+                            inputClass="form-control" />
+                        <label>From</label>
+                    </p-floatLabel>
+                </aside>
+                <aside class="col-md-3 mb-3">
+                    <p-floatLabel>
+                        <i class="pi pi-globe"></i>
+                        <p-dropdown [options]="[]" optionLabel="name" placeholder="to country"
+                            inputClass="form-control" />
+                        <label>To</label>
+                    </p-floatLabel>
+                </aside>
+                <aside class="col-md-3 mb-3">
+                    <p-floatLabel>
+                        <i class="pi pi-calendar"></i>
+                        <p-calendar styleClass="d-block" inputStyleClass="form-control"
+                            placeholder="Before (Day and Time)" />
+                        <label>Before Date/time</label>
+                    </p-floatLabel>
+                </aside>
+                <aside class="col-md-3 mb-3">
+                    <p-floatLabel>
+                        <i class="pi pi-box"></i>
+                        <input placeholder="KG To Deliver" class="form-control" type="text" pInputText />
+                        <label>weight</label>
+                    </p-floatLabel>
+                </aside>
+            </div>
+        </div>
+    </ng-container>
+    }
+    @if(type() === ESearchType.local){
+    <ng-container>
+        <div class="p-5">
+            <div class="row">
+                <aside class="col-md-3 mb-3">
+                    <p-floatLabel>
+                        <!-- <i class="pi pi-globe"></i> -->
+                        <p-dropdown [options]="[]" optionLabel="name" placeholder="from city"
+                            inputClass="form-control" />
+                        <label>From</label>
+                    </p-floatLabel>
+                </aside>
+                <aside class="col-md-3 mb-3">
+                    <p-floatLabel>
+                        <!-- <i class="pi pi-search"></i> -->
+                        <p-dropdown [options]="[]" optionLabel="name" placeholder="to city" inputClass="form-control" />
+                        <label>To</label>
+                    </p-floatLabel>
+                </aside>
+                <aside class="col-md-3 mb-3">
+                    <p-floatLabel>
+                        <i class="pi pi-calendar"></i>
+                        <p-calendar styleClass="d-block" inputStyleClass="form-control"
+                            placeholder="Before (Day and Time)" />
+                        <label>Before Date/time</label>
+                    </p-floatLabel>
+                </aside>
+                <aside class="col-md-3 mb-3">
+                    <p-floatLabel>
+                        <i class="pi pi-box"></i>
+                        <input placeholder="KG To Deliver" class="form-control" type="text" pInputText />
+                        <label>weight</label>
+                    </p-floatLabel>
+                </aside>
+            </div>
+        </div>
+    </ng-container>
+    }
+
+    <div class="row justify-content-center pb-4 px-4">
+        <div class="col-md-2 col-6">
+            <app-base-button-component classes="btn btn-outline-secondary py-3 w-100"> Search As
+                Sender</app-base-button-component>
+        </div>
+        <div class="col-md-2 col-6">
+            <app-base-button-component classes="btn btn-secondary py-3 w-100"> Search As
+                Traveler</app-base-button-component>
+        </div>
+    </div>
+</app-shadow-box>

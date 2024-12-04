@@ -1,0 +1,20 @@
+<div class="plan_card shadow ">
+    <div class="p-3">
+        <div class="d-flex justify-content-between">
+            <h6 class="h4"> {{plan().title}} </h6>
+            <i class="pi pi-{{plan().icon}}" [style.color]="plan().iconColor"></i>
+        </div>
+        <div class="my-4">
+            <p class="h1 text-center fw-bold"> {{plan().cost | currency}} </p>
+        </div>
+        <div class="my-3">
+            <p class="grey_color font_size__13"> {{plan().description}} </p>
+        </div>
+        <div>
+            <ul class="grey_color px-3 font_size__14 fw-semibold">
+                @for(item of plan().features; track item){ <li class="my-2"> <span class="text-dark text-center">{{item}}</span> </li> }
+            </ul>
+        </div>
+    </div>
+    <app-base-button-component classes="d-block btn rounded-0 w-100 text-uppercase p-3 {{plan().buttonClass}}"> select </app-base-button-component>
+</div>

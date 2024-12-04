@@ -1,0 +1,42 @@
+<footer class="secondary_bg pt-5 secondary_font">
+    <section class="container py-5">
+        <div class="row">
+            <aside class="col-md-4 mb-3">
+                <app-logo-component classes="text-white font_size__30 mb-4 d-block"></app-logo-component>
+                <p class="text-white secondary_font">ShipUp delivers an unparalleled customer service through dedicated customer teams, engaged people working in an agile culture, and a global footprint</p>
+            </aside>
+            <aside class="col-md-2 mb-3">
+                <h6 class="text-capitalize mb-4 text-white font_size__20"> Explore </h6>
+                <ul class="list-unstyled px-0">
+                    <li class="mb-2 fw-light"> <app-base-link-component classes="text-white text-capitalize" path=""> About Us </app-base-link-component> </li>
+                    <li class="mb-2 fw-light"> <app-base-link-component classes="text-white text-capitalize" path=""> Terms </app-base-link-component> </li>
+                </ul>
+            </aside>
+            <aside class="col-md-2 mb-3">
+                <h6 class="text-capitalize mb-4 text-white font_size__20"> Legal </h6>
+                <ul class="list-unstyled px-0">
+                    <li class="mb-2 fw-light"> <app-base-link-component classes="text-white text-capitalize" path=""> Terms </app-base-link-component> </li>
+                    <li class="mb-2 fw-light"> <app-base-link-component classes="text-white text-capitalize" path=""> Privacy </app-base-link-component> </li>
+                </ul>
+            </aside>
+            <aside class="col-md-4 mb-3">
+                <h6 class="text-capitalize mb-4 text-white font_size__20"> Social Media </h6>
+                <div class="d-flex">
+                    @for(item of ['facebook', 'whatsapp', 'instagram', 'twitter']; track item){
+                        <app-base-link-component classes="me-2" path="">
+                            <p-avatar 
+                        icon="pi pi-{{item}}" 
+                        styleClass="secondary_color" shape="circle" size="normal" [style]="{backgroundColor: 'var(--white)'}"/>
+                        </app-base-link-component>
+                    }
+                </div>
+            </aside>
+        </div>
+
+        <p-divider class="gray_bg"/>
+
+        <div class="text-center pt-3">
+            <app-logo-component classes="text-white font_size__25 mb-4 d-block"></app-logo-component>
+        </div>
+    </section>
+</footer>

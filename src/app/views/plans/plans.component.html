@@ -1,0 +1,13 @@
+<article class="plans">
+    <div class="container py-5">
+        <div class="col-md-9 mx-auto py-5">
+            <div class="row">
+                @for(item of plans; track item; let index = $index){
+                    <aside class="col-md-4 mb-3 position-relative {{index !== 1 && 'mt-md-4'}}">
+                        <app-plan-card [plan]="item"></app-plan-card>
+                    </aside>
+                }
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,21 @@
+<app-auth img="login-side.png">
+    <div>
+        <h6 class="h1 primary_font primary_color text-uppercase fw-bold"> Welcome Back </h6>
+        <div class="primary_bg my-3" style="height: 1px"></div>
+        <h6 class="h1 primary_font primary_color text-uppercase fw-bold"> sign In </h6>
+        <p class="font_size__14"> Don’t have account yet? <app-base-link-component classes="primary_color" [path]="'/' + ERoutes.register"> Sign Up </app-base-link-component> </p>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control"/>
+                <small class="primary_color"> Email is required </small>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control"/>
+                <small class="primary_color"> Password is required </small>
+            </div>
+        </form>
+        <app-base-link-component [path]="'/' + ERoutes.forgotPassword"> <span  class="h6 primary_font primary_color text-uppercase fw-medium d-block"> Forgot Password? </span>  </app-base-link-component>
+        <br/>
+        <app-base-button-component classes="btn-primary px-4"> Login </app-base-button-component>
+    </div>
+</app-auth>
