@@ -1,18 +1,19 @@
-name: CI -> Deploy to My website
 on:
   push:
     branches: [ dev ]
+name: 🚀 Deploy website on push
 jobs:
-  build:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      # Here is the deployment action
-      - name: Upload from public_html via FTP
-        uses: airvzxf/ftp-deployment-action@latest
-        with:
-          server: ${{secrets.SERVER_ADDRESS}}
-          user: ${{secrets.SERVER_USERNAME}}
-          password: ${{secrets.SERVER_PASSWORD}}
-          remote_dir: ${{secrets.SERVER_DIR}}
-          # local_dir: "./public_html/dev.lokinter"
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{secrets.SERVER_ADDRESS}}
+        username: ${{secrets.SERVER_USERNAME}}
+        password: ${{secrets.SERVER_PASSWORD}}
+        server-dir: ${{secrets.SERVER_DIR}}
