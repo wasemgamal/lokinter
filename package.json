@@ -24,6 +24,7 @@
     "@ngrx/signals": "^18.1.1",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",
+    "ng-qrcode": "^18.0.0",
     "primeicons": "^7.0.0",
     "primeng": "^17.18.11",
     "rxjs": "~7.8.0",

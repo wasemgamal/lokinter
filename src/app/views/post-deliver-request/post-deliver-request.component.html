@@ -1,0 +1,105 @@
+<article class="post_deliver__request py-5 my-5">
+    <section class="container">
+        <h6 class="font_size__40 text-center fw-bold mb-4 mt-5 secondary_color secondary_font"> Post Your Deliver Request </h6>
+        <div class="row">
+            <aside class="col-lg-9 col-md-10 mx-auto">
+                <app-shadow-box classes="p-5">
+                    <div class="row justify-content-center mb-4 text-capitalize overflow-hidden rounded-4 pb-3">
+                        <div class="col-md-3 col-6"><app-base-button-component (clicked)="type.set(ESearchType.local)"
+                                classes="btn letter_spacing__1 {{type() === ESearchType.local ? 'btn-secondary' : 'btn-outline-secondary'}} py-3 w-100">
+                                Local </app-base-button-component></div>
+                        <div class="col-md-3 col-6"><app-base-button-component (clicked)="type.set(ESearchType.international)"
+                                classes="btn letter_spacing__1 {{type() === ESearchType.international ? 'btn-secondary' : 'btn-outline-secondary'}} py-3 w-100">
+                                International </app-base-button-component></div>
+                    </div>
+                    <div class="row">
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <p-dropdown [options]="[]" optionLabel="name" placeholder="I want to"
+                                    inputClass="form-control" />
+                                <label>I Want To *</label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <input placeholder="specify the item name here" class="form-control" type="text" pInputText />
+                                <label>Item Name *</label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <i class="pi pi-globe"></i>
+                                <p-dropdown [options]="[]" optionLabel="name" placeholder="from country"
+                                    inputClass="form-control" />
+                                <label>From *</label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <i class="pi pi-globe"></i>
+                                <p-dropdown [options]="[]" optionLabel="name" placeholder="to country"
+                                    inputClass="form-control" />
+                                <label>To *</label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <i class="pi pi-calendar"></i>
+                                <p-calendar [showTime]="true" styleClass="d-block" inputStyleClass="form-control"
+                                    placeholder="before (date and time)" />
+                                <label>Before Date/time *</label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <input placeholder="kilograms" class="form-control" type="number" />
+                                <label>KG *</label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <input placeholder="location Link" class="form-control" type="text" pInputText />
+                                <label> Pick-up location (optional) </label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <input placeholder="location Link" class="form-control" type="text" pInputText />
+                                <label> Drop-off location (optional) </label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-floatLabel>
+                                <p-dropdown [options]="[]" optionLabel="name" placeholder="select categories"
+                                    inputClass="form-control" />
+                                <label>Categories *</label>
+                            </p-floatLabel>
+                        </aside>
+                        <aside class="col-md-6 mb-4">
+                            <p-fileUpload 
+                            mode="basic"
+                            styleClass="btn btn-outline-secondary py-3 w-100" 
+                            chooseLabel="Upload Attachment File *" 
+                            chooseIcon="pi pi-upload"
+                            name="demo[]" 
+                            accept="image/*" 
+                            maxFileSize="1000000"/>
+                        </aside>
+                        
+                        <aside class="col-md-12 mb-4">
+                            <p-floatLabel>
+                                <textarea class="form-control" rows="4"></textarea>
+                                <label>Possible Delivery points (optional)</label>
+                            </p-floatLabel>
+                        </aside>
+                    </div>
+                    <div class="row justify-content-center">
+                        <aside class="col-md-4 mb-4">
+                            <app-base-button-component classes="btn btn-secondary py-3 w-100">Post</app-base-button-component>
+                        </aside>
+                    </div>
+                </app-shadow-box>
+            </aside>
+        </div>
+    </section>
+</article>
