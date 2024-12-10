@@ -14,5 +14,5 @@ jobs:
           server: ${{secrets.SERVER_ADDRESS}}
           user: ${{secrets.SERVER_USERNAME}}
           password: ${{secrets.SERVER_PASSWORD}}
-          local_dir: ${{secrets.SERVER_DIR}}
+          remote_dir: ${{secrets.SERVER_DIR}}
           # local_dir: "./public_html/dev.lokinter"
