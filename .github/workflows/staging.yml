@@ -28,3 +28,4 @@ jobs:
         username: ${{secrets.SERVER_USERNAME}}
         password: ${{secrets.SERVER_PASSWORD}}
         server-dir: ${{secrets.SERVER_DIR}}
+        local-dir: ./dist/
