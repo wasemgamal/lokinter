@@ -4,11 +4,11 @@
     </a>
 }
 @else {
-    <a [routerLink]="[path]" [routerLinkActive]="activeClasses" [class]="classes">
+    <a [routerLink]="[path]" [queryParams]="queryParams" [routerLinkActive]="activeClasses" [class]="classes">
         <ng-container *ngTemplateOutlet="content"></ng-container>
     </a>
 }
 <ng-template #content>
-    @if(icon){<i class="pi pi-{{icon}} me-3"></i>}
+    @if(icon){<i class="pi pi-{{icon}} me-2"></i>}
     <ng-content></ng-content>
 </ng-template>

@@ -1,0 +1,23 @@
+<i role="button" class="pi pi-bell primary_color ms-4" (click)="menu.toggle($event)" style="font-size: 1.5rem"></i>
+
+<p-menu styleClass="notifications_menu" #menu [model]="notifications" [popup]="true">
+    <ng-template  pTemplate="start">
+        <div class="d-flex justify-content-between px-3 py-2">
+            <span class="secondary_color h5"> Notifications </span>
+            <p-badge styleClass="primary_bg" [value]="22" />
+        </div>
+    </ng-template>
+    <ng-template  pTemplate="item" let-item>
+        <div class="px-2 py-1"> 
+            <div class="shadow-sm rounded-4 p-3">
+                <p class="fw-bold mb-1"> {{item.label}} </p>    
+                <p class="mb-0"> {{item.label}} </p>  
+            </div>  
+        </div>
+    </ng-template>
+    <ng-template  pTemplate="end">
+        <div class="p-2 d-flex justify-content-center">
+            <app-base-button-component classes="btn btn-primary btn-sm rounded-4 px-4"> Load More </app-base-button-component>
+        </div>
+    </ng-template>
+</p-menu>

@@ -8,4 +8,9 @@ export enum ERoutes{
     services = 'services',
     contact = 'contact',
     home = 'home',
+    postRequest = 'deliver-request',
+    postTrip = 'add-trip',
+    searchResult = 'search',
+    userReviews = 'user-reviews',
+    deals = 'deals',
 }

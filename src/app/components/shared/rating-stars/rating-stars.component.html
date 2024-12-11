@@ -1,0 +1,8 @@
+<p-rating [(ngModel)]="value" [readonly]="true" class="my-3" [cancel]="false">
+    <ng-template pTemplate="onicon">
+        <i class="pi pi-star-fill text-warning"></i>
+    </ng-template>
+    <ng-template pTemplate="officon">
+        <i class="pi pi-star-fill" style="color:var(--bs-gray-400)"></i>
+    </ng-template>
+</p-rating>

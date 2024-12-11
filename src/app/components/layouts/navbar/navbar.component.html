@@ -13,7 +13,7 @@
                 </li>
                 <li class="nav-item">
                     <app-base-link-component
-                        classes="nav-link primary_bg text-white secondary_font rounded-pill px-3 text-capitalize mx-1 font_size__14 letter_spacing__1" path="item.link"> Deals/Posts </app-base-link-component>
+                        classes="nav-link primary_bg text-white secondary_font rounded-pill px-3 text-capitalize mx-1 font_size__14 letter_spacing__1" path="/{{ERoutes.deals}}"> Deals/Posts </app-base-link-component>
                 </li>
                 <li class="nav-item">
                     <app-base-link-component
@@ -23,13 +23,17 @@
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item">
                     <app-base-link-component
-                        classes="nav-link primary_bg text-white secondary_font rounded-pill px-3 text-capitalize mx-1 font_size__14 letter_spacing__1" path="item.link"> Post Delivery request </app-base-link-component>
+                        classes="nav-link primary_bg text-white secondary_font rounded-pill px-3 text-capitalize mx-1 font_size__14 letter_spacing__1" path="/{{ERoutes.postRequest}}"> Post Delivery request </app-base-link-component>
                 </li>
                 <li class="nav-item">
-                    <i class="pi pi-bell primary_color mx-2" style="font-size: 1.5rem"></i>
+                    <app-base-link-component
+                        classes="nav-link primary_bg text-white secondary_font rounded-pill px-3 text-capitalize mx-1 font_size__14 letter_spacing__1" path="/{{ERoutes.postTrip}}"> Add Trip </app-base-link-component>
                 </li>
                 <li class="nav-item">
-                    <i class="pi pi-user primary_color mx-2" style="font-size: 1.5rem"></i>
+                    <app-notifications/>
+                </li>
+                <li class="nav-item">
+                    <i class="pi pi-user primary_color ms-4" style="font-size: 1.5rem"></i>
                 </li>
             </ul>
         </div>

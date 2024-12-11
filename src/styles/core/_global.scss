@@ -270,7 +270,7 @@ body{
     .p-placeholder{
         @extend .font_size__13;
     }
-    &:hover, &:focus, &:not(.p-disabled).p-focus{
+    &:focus, &:not(.p-disabled).p-focus{
         border-color: var(--primaryColor) !important;
     }
     &:not(.p-disabled).p-focus{
@@ -338,4 +338,5 @@ body{
 .p-inputotp{
     justify-content: space-evenly !important;
 }
+
 /*------------------------- end global -----------------------*/

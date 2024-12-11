@@ -1,0 +1,22 @@
+<article class="search_result py-5 my-5">
+    <section class="container">
+        <app-shadow-box>
+            <app-search-form></app-search-form>
+
+            <div class="result_list p-md-5 p-3">
+                @for(item of [1,2,3]; track item){
+                    <div class="mb-3" (click)="item % 2 === 0 ? tripDialog.set(true) : deliverRequestDialog.set(true)">
+                        <app-search-item [item]="item"></app-search-item>
+                    </div>
+                }
+            </div>
+        </app-shadow-box>
+    </section>
+</article>
+
+<app-dialog-component [(visible)]="tripDialog">
+    <app-trip-info></app-trip-info>
+</app-dialog-component>
+<app-dialog-component [(visible)]="deliverRequestDialog">
+    <app-deliver-request-info></app-deliver-request-info>
+</app-dialog-component>

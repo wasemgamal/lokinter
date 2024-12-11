@@ -1,0 +1,48 @@
+<article class="post_deliver__request py-5 my-5">
+    <section class="container">
+        <h6 class="font_size__40 text-center fw-bold mb-4 mt-5 secondary_color secondary_font"> Deals </h6>
+
+        <app-shadow-box classes="p-3 rounded-pill mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex flex-wrap">
+                    @for(tab of tabs;track tab){
+                        <span class="btn me-2 rounded-pill font_size__13" [class]="tab.class"> {{tab.label}} </span>
+                    }
+                </div>
+                <p-menu #menu [model]="filters" [popup]="true" />
+                <i class="pi pi-filter btn text-secondary-emphasis" (click)="menu.toggle($event)"></i>
+            </div>
+        </app-shadow-box>
+        <app-shadow-box>
+            <p-table [value]="deals" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Type</th>
+                        <th>Date/Time</th>
+                        <th>Status</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>{{ product.from }}</td>
+                        <td>{{ product.to }}</td>
+                        <td>{{ product.type }}</td>
+                        <td>{{ product.date }}</td>
+                        <td>{{ product.status }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            <div class="d-flex align-items-center justify-content-end">
+                <span class="me-3 text-color">rows per page: </span>
+                <div><p-dropdown [options]="[5,10,20,30]" /></div>
+                <p-paginator 
+                [first]="1" 
+                [rows]="10" [totalRecords]="120" 
+                [showCurrentPageReport]="true"
+                currentPageReportTemplate="{first} - {last} of {totalRecords}" [showPageLinks]="false" [showFirstLastIcon]="false" ></p-paginator>
+            </div>
+        </app-shadow-box>
+    </section>
+</article>

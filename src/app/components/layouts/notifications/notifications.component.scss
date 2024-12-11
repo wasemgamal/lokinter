@@ -1,0 +1,16 @@
+::ng-deep {
+    .notifications_menu {
+        &.p-menu-overlay {
+            min-width: 400px;
+            max-width: 90vw;
+
+            .p-menu-list {
+                overflow-y: auto;
+                max-height: 300px;
+                .p-submenu-header{
+                    display:none;
+                }
+            }
+        }
+    }
+}

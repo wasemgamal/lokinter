@@ -1,11 +1,11 @@
-<app-shadow-box>
+<div class="search_form">
     <div class="d-flex justify-content-end text-capitalize overflow-hidden rounded-4 pb-3">
         <div class="col-md-2 col-6"><app-base-button-component (clicked)="type.set(ESearchType.local)"
-                classes="btn {{type() === ESearchType.local ? 'btn-secondary' : 'btn-outline-secondary'}} px-5 py-3 rounded-0 w-100">
-                local </app-base-button-component></div>
+                classes="btn letter_spacing__1 {{type() === ESearchType.local ? 'btn-secondary' : 'btn-outline-secondary'}} px-5 py-3 rounded-0 w-100">
+                Local </app-base-button-component></div>
         <div class="col-md-2 col-6"><app-base-button-component (clicked)="type.set(ESearchType.international)"
-                classes="btn {{type() === ESearchType.international ? 'btn-secondary' : 'btn-outline-secondary'}} px-5 py-3 rounded-0 w-100">
-                international </app-base-button-component></div>
+                classes="btn letter_spacing__1 {{type() === ESearchType.international ? 'btn-secondary' : 'btn-outline-secondary'}} px-5 py-3 rounded-0 w-100">
+                International </app-base-button-component></div>
     </div>
 
     @if(type() === ESearchType.international){
@@ -31,7 +31,7 @@
                 <aside class="col-md-3 mb-3">
                     <p-floatLabel>
                         <i class="pi pi-calendar"></i>
-                        <p-calendar styleClass="d-block" inputStyleClass="form-control"
+                        <p-calendar [showTime]="true" styleClass="d-block" inputStyleClass="form-control"
                             placeholder="Before (Day and Time)" />
                         <label>Before Date/time</label>
                     </p-floatLabel>
@@ -53,7 +53,7 @@
             <div class="row">
                 <aside class="col-md-3 mb-3">
                     <p-floatLabel>
-                        <!-- <i class="pi pi-globe"></i> -->
+                        <i class="pi pi-truck"></i>
                         <p-dropdown [options]="[]" optionLabel="name" placeholder="from city"
                             inputClass="form-control" />
                         <label>From</label>
@@ -61,7 +61,7 @@
                 </aside>
                 <aside class="col-md-3 mb-3">
                     <p-floatLabel>
-                        <!-- <i class="pi pi-search"></i> -->
+                        <i class="pi pi-truck"></i>
                         <p-dropdown [options]="[]" optionLabel="name" placeholder="to city" inputClass="form-control" />
                         <label>To</label>
                     </p-floatLabel>
@@ -88,12 +88,12 @@
 
     <div class="row justify-content-center pb-4 px-4">
         <div class="col-md-2 col-6">
-            <app-base-button-component classes="btn btn-outline-secondary py-3 w-100"> Search As
-                Sender</app-base-button-component>
+            <app-base-link-component path="/{{ERoutes.searchResult}}" [queryParams]="{type: 'sender'}" classes="btn btn-outline-secondary py-3 w-100"> Search as
+                Sender</app-base-link-component>
         </div>
         <div class="col-md-2 col-6">
-            <app-base-button-component classes="btn btn-secondary py-3 w-100"> Search As
-                Traveler</app-base-button-component>
+            <app-base-link-component path="/{{ERoutes.searchResult}}" [queryParams]="{type: 'traveler'}" classes="btn btn-secondary py-3 w-100"> Search as
+                Traveler</app-base-link-component>
         </div>
     </div>
-</app-shadow-box>
+</div>

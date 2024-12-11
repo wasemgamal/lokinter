@@ -1,0 +1,40 @@
+<article class="user_reviews py-5 my-5">
+    <section class="container">
+        <div class="d-flex justify-content-center mb-5">
+            <div class="d-flex">
+                <p-avatar class="me-3" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                    styleClass="mr-2" size="xlarge" shape="circle" />
+                <div>
+                    <h6 class="secondary_color fw-medium"> Wasem Gamal </h6>
+                    <div class="font_size__14 my-2">
+                        <app-rating-stars [value]="1"></app-rating-stars>
+                    </div>
+                    <span class="badge text-center py-2 px-3 rounded-pill"
+                        style="color:var(--red-400); background-color:var(--red-100)"> 1200 Request </span>
+                    <span class="badge text-center py-2 px-3 rounded-pill"
+                        style="color:var(--red-400); background-color:var(--red-100)"> 1200 Trip </span>
+                </div>
+            </div>
+        </div>
+        <app-shadow-box classes="p-5">
+            <div class="row">
+                @for(item of [1,2,3,4,5,6,7]; track item){
+                <aside class="col-md-4 mb-4">
+                    <div class="d-flex flex-column align-items-center bg-body-tertiary rounded-5 p-3">
+                        <p-avatar class="me-3"
+                            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                            styleClass="mr-2" size="xlarge" shape="circle" />
+                        <div class="text-center">
+                            <h6 class="secondary_color fw-medium"> Wasem Gamal </h6>
+                            <div class="font_size__14 my-2">
+                                <app-rating-stars></app-rating-stars>
+                            </div>
+                            <h6 class="gray_color fw-normal"> Wasem is a very good man </h6>
+                        </div>
+                    </div>
+                </aside>
+                }
+            </div>
+        </app-shadow-box>
+    </section>
+</article>

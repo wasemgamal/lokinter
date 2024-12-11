@@ -18,5 +18,6 @@ export class BaseLinkComponentComponent {
   @Input({required: true}) path: string='';
   @Input() external: boolean = false;
   @Input() activeClasses: string = '';
+  @Input() queryParams!: Object;
   @Input() download: string|null=null;
 }

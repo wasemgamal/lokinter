@@ -37,10 +37,34 @@ const mainLayoutRoutes: Routes = [
         loadComponent: () => import('./layouts/main-layout/main-layout.component').then(m => m.MainLayoutComponent),
         children: [
             {
+                path: '',
+                redirectTo: `/${ERoutes.home}`,
+                pathMatch: 'full'
+            },
+            {
                 path: ERoutes.home,
                 loadComponent: () => import('./views/home/home.component').then(m => m.HomeComponent),
             },
-            
+            {
+                path: ERoutes.postRequest,
+                loadComponent: () => import('./views/post-deliver-request/post-deliver-request.component').then(m => m.PostDeliverRequestComponent),
+            },
+            {
+                path: ERoutes.postTrip,
+                loadComponent: () => import('./views/post-trip/post-trip.component').then(m => m.PostTripComponent),
+            },
+            {
+                path: ERoutes.searchResult,
+                loadComponent: () => import('./views/search-result/search-result.component').then(m => m.SearchResultComponent),
+            },
+            {
+                path: ERoutes.userReviews,
+                loadComponent: () => import('./views/user-reviews/user-reviews.component').then(m => m.UserReviewsComponent),
+            },
+            {
+                path: ERoutes.deals,
+                loadComponent: () => import('./views/deals/deals.component').then(m => m.DealsComponent),
+            },
         ]
     }
 ]
@@ -49,6 +73,6 @@ const mainLayoutRoutes: Routes = [
 
 
 export const routes: Routes = [
-    ...authLayoutRoutes,
     ...mainLayoutRoutes,
+    ...authLayoutRoutes,
 ];
